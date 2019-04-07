@@ -1,0 +1,50 @@
+\section{Support Vector Machine and Regression}
+
+\subsection{Separable}
+A distance of a point $a$ to a plane $w \cdot x + b = 0$ is $\frac{a\cdot w + b}{\norm{w}}$.
+Define margin $\zeta$ to be the value that all $(x_i, y_i)$ are having distance larger that this.
+\begin{equation}
+\frac{x_i\cdot w + b}{\norm{w}} \geq \zeta
+\end{equation}
+
+Then if we fix $\zeta$ to be 1, mathematically the margin is $\frac{1}{\norm{w}}$. The we are actually minimize $\frac{1}{2} \norm{w}^2$
+
+\subsection{Non Separable}
+If the data is not separable, then we add penalty to the optimization function (constant muliply soft margin).
+\begin{equation}
+  \begin{aligned}
+    &loss = \frac{1}{2} \norm{w}^2 + C\sum_{i=1} ^ n\xi_i \\
+    &s.t. \forall i, y_i(w.x_i + b) >= 1 - \xi_i
+  \end{aligned}
+\end{equation}
+
+The $x_i$ represent the {\color{blue}hinge loss}, an "option" style loss function. Which could be rewrite as $max\{0, 1 - y(w\cdot x + b)\}$
+
+\subsection{Solver}
+Currently according to Stanford course this one should use SGD to solve.
+
+\subsection{Dual Problem}
+According to representer theorem the $w$ can be a linear combination of $x_i$ and is $w = \sum_{i=1}^n \alpha_i x_i$. Then we have $f(x_i) = y_i\sum_{j=1}^n \alpha_j  x_j^T x_i + b$
+The primal problem of this is minimize:
+\begin{equation}
+  \frac{1}{2} \sum_{jk} \alpha_j \alpha_k y_j y_k(x_j^\top) + \sum_{i=1}^n C \cdot max(0, 1-y_i\sum_{j=1}^n \alpha_j  x_j^T x_i + b)
+\end{equation}
+
+The dual problem is maximize
+\begin{equation}
+  \begin{aligned}
+    &-\frac{1}{2} \sum_{jk} \alpha_j \alpha_k y_j y_k(x_j^\top) + \sum_{i=1}^n \alpha_i \\
+    &0 \leq \alpha_i \leq C \\
+    &\sum_i \alpha_i y_i = 0
+  \end{aligned}
+\end{equation}
+
+\subsection{Regression}
+For regression part. The we assume the regression lies in range $\epsilon$. Also the penalty of upper $\epsilon$ is $\xi_u$ and down is $\xi_d$
+So the primal problem is
+
+\begin{equation}
+  \begin{aligned}
+    &loss = \frac{1}{2} \norm{w}^2 + C\sum_{i=1} (max\{f(x_i) - y_i - \epsilon, 0\}  + max\{y_i - f(x_i) - \epsilon, 0\})\\
+  \end{aligned}
+\end{equation}
