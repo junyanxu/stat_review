@@ -1,0 +1,25 @@
+\section{Kalman Filter and Hidden Markov Model}
+
+\subsection{Basic Definition}
+Kalman filter has definition $x_t$ and the transition matrix $A_t$. The $x_t$ follows the formula
+\begin{equation}
+  \begin{aligned}
+    x_{t+1} &= A_t \cdot x_t + Normal(0, Q_t) + b_t\\
+    z_{t} &= C_t \cdot x_t + Normal(0, R_t) + d_t\\
+  \end{aligned}
+\end{equation}
+All the state transitions and observations are linear with Gaussian distributed noise, then the
+estimation can be represented by a mean plus a Gaussian distribution.
+
+The kalman gain is a critical term in Kalman Filter. In the formula above, kalman gain can be defined as the {\color{blue}coeffcient of
+innovation error that we need to update our prior estimation of $x_t$ }based on the current observation $z_t$. The idea is quite
+straight forward  $$\hat{x}_t|t = \hat{x}_t|t-1 + K_t \cdot (z_t - C_t \cdot \hat{x}_t|t-1)$$
+
+The solving of kalman gain can be defined as minimize covariance of time t posterior estimation of x. Which is actually miniize the trace of error matrix.
+\begin{equation}
+K_t = \argmin_K trace( cov(x_t - x_t|t-1 - K(C \cdot x_t + v_t - C_t \cdot x_t|t-1)))
+\end{equation}
+
+\subsection{EM Algorithm}
+Two step, the $E$ step of this algorithm first assumed we have $\theta$, then we can get distribution of hidden $x$. Then we calculate the expectation $E_{x}(l)$ of the likelyhood under hidden variable$x$.
+Next step is the $M$ step, caclculate the max E to get theta
