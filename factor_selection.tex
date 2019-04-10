@@ -1,0 +1,10 @@
+\section{Factor Selection}
+\subsection{Stepwise Selection}
+For stepwise selection, we have forward and backward type. Backward start from the full model and remove the least impact variable. Forward start from 0 and add most impact model. They are greedy algorithm
+
+\subsection{Stagewise Selection}
+It should be properly named as {\color{blue}(Error Correlation Gradient Descent)}. Because the algo is adding variable selected by their correlation with the error term (with small step $\epsilon$)
+\begin{equation}
+  \hat{c} = c(\hat{\mu}) = X^\top (y-\hat{\mu})
+\end{equation}
+The next $\mu$ is  $\hat{j} = argmax |\hat{c}_j|$ then $\mu = \mu + \epsilon \cdot sign(\hat{c}_j) \cdot x_j$

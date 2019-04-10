@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_4) (preloaded format=pdflatex 2016.4.6)  8 APR 2019 23:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/MacPorts 2015_4) (preloaded format=pdflatex 2016.4.6)  9 APR 2019 23:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -495,26 +495,27 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 [1
 
 {/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(./support_vector_machine.tex [2]) (./hidden_markov.tex) (./decision_tree.tex)
-(./deep_learning.tex) (./factor_selection.tex)
+(./support_vector_machine.tex [2]) (./hidden_markov.tex [3])
+(./decision_tree.tex) (./deep_learning.tex) (./factor_selection.tex)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 15.
- [3]
+ [4]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 15.
- (./stats_review.aux)
+
+(./stats_review.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 15.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 15.
 Package rerunfilecheck Info: File `stats_review.out' has not changed.
-(rerunfilecheck)             Checksum: 7EA17CA082C35D8FFA2DB35BB047A47D;622.
+(rerunfilecheck)             Checksum: A49A6E02AF0A52864FAD838AC14F4842;896.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 15.
  ) 
 Here is how much of TeX's memory you used:
- 8757 strings out of 494952
- 127119 string characters out of 6178878
+ 8768 strings out of 494952
+ 127253 string characters out of 6178878
  247508 words of memory out of 5000000
- 11851 multiletter control sequences out of 15000+600000
+ 11855 multiletter control sequences out of 15000+600000
  13542 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 40i,11n,60p,270b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,11n,60p,270b,408s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
 cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/local/s
@@ -528,10 +529,10 @@ c/amsfonts/cm/cmr9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
 m/cmsy6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb>
-Output written on stats_review.pdf (3 pages, 154659 bytes).
+Output written on stats_review.pdf (4 pages, 159022 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

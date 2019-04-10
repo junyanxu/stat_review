@@ -8,3 +8,7 @@
 \BOOKMARK [1][-]{section.2}{Kalman Filter and Hidden Markov Model}{}% 8
 \BOOKMARK [2][-]{subsection.2.1}{Basic Definition}{section.2}% 9
 \BOOKMARK [2][-]{subsection.2.2}{EM Algorithm}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{HMM vs Kalman \(State Space Model\)}{section.2}% 11
+\BOOKMARK [1][-]{section.3}{Factor Selection}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{Stepwise Selection}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Stagewise Selection}{section.3}% 14

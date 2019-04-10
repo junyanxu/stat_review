@@ -23,3 +23,8 @@ K_t = \argmin_K trace( cov(x_t - x_t|t-1 - K(C \cdot x_t + v_t - C_t \cdot x_t|t
 \subsection{EM Algorithm}
 Two step, the $E$ step of this algorithm first assumed we have $\theta$, then we can get distribution of hidden $x$. Then we calculate the expectation $E_{x}(l)$ of the likelyhood under hidden variable$x$.
 Next step is the $M$ step, caclculate the max E to get theta
+
+\subsection{HMM vs Kalman (State Space Model)}
+\begin{enumerate}
+\item HMM has discrte hidden state, while Kalman has continuous hidden state (Gaussian transition).
+\end{enumerate}

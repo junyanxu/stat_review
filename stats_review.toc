@@ -8,3 +8,7 @@
 \contentsline {section}{\numberline {2}Kalman Filter and Hidden Markov Model}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Basic Definition}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}EM Algorithm}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}HMM vs Kalman (State Space Model)}{4}{subsection.2.3}
+\contentsline {section}{\numberline {3}Factor Selection}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Stepwise Selection}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Stagewise Selection}{4}{subsection.3.2}
