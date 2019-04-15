@@ -20,11 +20,20 @@ The solving of kalman gain can be defined as minimize covariance of time t poste
 K_t = \argmin_K trace( cov(x_t - x_t|t-1 - K(C \cdot x_t + v_t - C_t \cdot x_t|t-1)))
 \end{equation}
 
+What need to be noticed is that $Q_t$ and $R_t$ can be defined with some assumptions (exogeneous input), which is not a constant. The system can work fine too. The predicted variance follows
+\begin{equation}
+  \begin{aligned}
+    &P_{t|t-1} = A_t Q_t A_t^\top + R_t \\
+    &P_{t|t} = (I - K_t C_t) P_{t|t-1}
+  \end{aligned}
+\end{equation}
+
 \subsection{EM Algorithm}
 Two step, the $E$ step of this algorithm first assumed we have $\theta$, then we can get distribution of hidden $x$. Then we calculate the expectation $E_{x}(l)$ of the likelyhood under hidden variable$x$.
 Next step is the $M$ step, caclculate the max E to get theta
 
 \subsection{HMM vs Kalman (State Space Model)}
 \begin{enumerate}
-\item HMM has discrte hidden state, while Kalman has continuous hidden state (Gaussian transition).
+\item HMM has discrte hidden state {\color{blue}( support categorical, that's why second property holds)}, while Kalman has continuous hidden state (Gaussian transition).
+\item HMM discrete state only have transition matrix, but no transition noise.
 \end{enumerate}

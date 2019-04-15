@@ -1,0 +1,47 @@
+\section{Trees}
+\subsection{Decision Tree}
+
+The decsition tree algo can be think of a iterative constructing tree. Suppose current stage $t$ we have tree $K_t$ and node $k_{1 ... t} \in K_t$. The input data has $M$ features.
+Then we will expand the tree by adding new $m_{t+1}$ using
+
+\begin{equation}
+  \begin{aligned}
+    m_{t+1}, \theta_{t+1} = \argmin_{i \in t, m \in M, \theta \in \mathbb{R}} \frac{n_{left}}{N_m} H(\{(x, y)| x_j \leq \theta\}) + \frac{n_{right}}{N_m} H(\{(x, y)| x_j \geq \theta\})
+  \end{aligned}
+\end{equation}
+
+For classification, $H$ can be defined as $ -\sum_k p_{mk} \cdot log(p_{mk}) $. For regression, H can be defined as $ -\sum_k (y_i - \hat{y}_m)^2$. The key thing about decision tree is that the {\color{blue}definition is recursive which is different from SVM's global optimization.}
+
+The strength and weakness of this algo is:
+
+\begin{enumerate}
+  \item {\color{green}GOOD}: It is implicity doing data selection. Easy interpretation.
+  \item {\color{green}GOOD}: Non-linearity low effection.
+  \item {\color{red}BAD}: Inaccurate often
+  \item {\color{red}BAD}: Weak in dealing with continuous output.
+\end{enumerate}
+
+
+\subsection{Random Forest}
+Perform both sample bagging and feature bagging. In Sklearn, the bagging are performed by only sample bagging, where sub-sample each time is the same size as original input.
+
+
+\subsection{XGBoost}
+Different from random forest, XGBoost start from building sequential trees. It tells you how much you should build extra tree to minimize loss given previous structure.
+
+\begin{equation}
+  \begin{aligned}
+    L^t - L^{t-1} &= \sum_{i=1}^n l(y_i, \hat{y}_i^{t-1} + f_t(x_i)) + \Omega(f_t) -  \sum_{i=1}^n l(y_i, \hat{y}_i^{t-1})\\
+    \Omega(f_t) &= \gamma T + \frac{1}{2} \lambda \sum_{j=1}^{T}||w_j||^2
+  \end{aligned}
+\end{equation}
+
+However we don't know the structure of the next tree yet, but we do know the give a fixed structure of next tree, the weight $w_j$ on leaf $j$ should follow some constrain.
+
+Define $I_j = \{i|q(x_i) = j\}$ as instance set on leaf j.
+The loss can be further write as:
+\begin{equation}
+  \sum_{j=1}^T [g(y_i) w_i + 0.5(\sum_{i\in I_j} h_i + \lambda) w_j^2] + \gamma T
+\end{equation}
+
+Taking derivative for $w_i$, we have optimal $w_i = \frac{\sum_{i\in I_j} g_i}{\sum_{i\in I_j} h_i + \lambda}$. {\color{blue}This $L$ can implied the optimal loss of adding a substree as well as a score function for coordinating a split(Recall in a single tree mode our loss function is just the change of the entropy)}. Then we can use normal greedy algorithm to find out the split of next tree.
