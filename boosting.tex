@@ -1,0 +1,10 @@
+\section{Boost Method}
+\subsection{Adaboost}
+
+Adaboost is a method which keep fixing the error classfication data. Similar to Tree method, this method is a recursive (iterative you might say) defined. The key is the error loss function.
+\begin{equation}
+\begin{aligned}
+  &E_m = \sum_{i=1}^{n}w_m(i) \cdot e^{-\alpha_m h_m(x_i) \cdot y_i}\\
+  &w_m(i) = e^{-y_i \cdot C_{m-1}(x_i)}
+\end{aligned}
+\end{equation}
